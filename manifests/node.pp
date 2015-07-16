@@ -1,9 +1,10 @@
 class rsnapshot::node(
   $to_location,
-  $ensure     = present,
-  $identifier = $::fqdn,
-  $ipaddress  = $::ipaddress,
-  $backup     = {},
+  $ensure         = present,
+  $identifier     = $::fqdn,
+  $ipaddress      = $::ipaddress,
+  $backup         = [],
+  $backup_script  = [],
   $export_sshkeys = true,
   $sshkey_aliases = [$identifier, $::ipaddress],
 ) {
@@ -14,6 +15,7 @@ class rsnapshot::node(
     identifier     => $identifier,
     ipaddress      => $ipaddress,
     backup         => $backup,
+    backup_script  => $backup_script,
     export_sshkeys => $export_sshkeys,
   }
 

@@ -1,0 +1,3 @@
+<% @backup_script_array.each do |value| -%>
+backup_script	ssh	root@<%= @ipaddress %>	<%= value %>	<%= scope.function_sha1([@ipaddress+value]) %>/
+<% end -%>
