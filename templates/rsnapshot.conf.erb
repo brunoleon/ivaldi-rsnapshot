@@ -94,8 +94,8 @@ cmd_logger	/usr/bin/logger
 # i.e. hourly, daily, weekly, etc.      #
 #########################################
 
-<% @retain.each do |key, value| -%>
-retain	<%= key %>	<%= value %>
+<% @retain.each do |value| -%>
+retain	<%= value.split(':')[0] %>	<%= value.split(':')[1] %>
 <% end -%>
 
 
@@ -160,8 +160,8 @@ ssh_args	-i /root/.ssh/rsnapshot.rsa
 # The include and exclude parameters, if enabled, simply get passed directly
 # to rsync. If you have multiple include/exclude patterns, put each one on a
 # separate line. Please look up the --include and --exclude options in the
-# rsync man page for more details on how to specify file name patterns. 
-# 
+# rsync man page for more details on how to specify file name patterns.
+#
 #include	???
 #include	???
 #exclude	???

@@ -14,12 +14,7 @@ class rsnapshot::params {
   $verbose  = '2'
   $loglevel = '3'
   $logfile  = '/var/log/rsnapshot.log'
-  $retain = {
-    'hourly'  => '6',
-    'daily'   => '7',
-    'weekly'  => '4',
-    'monthly' => '3',
-  }
+  $retain = ['hourly:6', 'daily:7', 'weekly:4', 'monthly:3']
   $hourly_hour   = '*/4'
   $hourly_minute = '0'
   $daily_hour    = '23'
